@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- VBox es un contenedor que organiza todo de arriba hacia abajo (verticalmente).
+     fx:controller="..." enlaza este diseño visual con el archivo de Java que tiene la lógica (el Controller). -->
+<VBox spacing="15.0" style="-fx-background-color: #f4f6f9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uam.edu.ni.calculosalariotrabajador.HelloController">
+
+    <!-- Esto le da un margen interno a la ventana para que los elementos no estén pegados a los bordes -->
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+
+    <!-- Un Label es simplemente un texto en pantalla. Aquí definimos el título. -->
+    <Label style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #2c3e50;" text="Cálculo de Salario y Bono" />
+
+    <Label text="Salario del trabajador:" />
+
+    <!-- fx:id="txtSalario" es súper importante. Es el "nombre" que le damos a esta caja de texto
+         para poder leer lo que el usuario escribió desde el archivo Java. -->
+    <TextField fx:id="txtSalario" style="-fx-background-radius: 5; -fx-padding: 5;" />
+
+    <!-- onAction="#calcularSalario" es el gatillo. Le dice al programa: "Cuando hagan clic aquí,
+         ve al Controller y ejecuta el método llamado calcularSalario". -->
+    <Button onAction="#calcularSalario" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;" text="Calcular" />
+
+    <!-- A estos Labels también les ponemos fx:id porque sus textos van a cambiar dinámicamente
+         cuando Java haga los cálculos matemáticos. -->
+    <Label fx:id="lblSeguro" style="-fx-text-fill: #e74c3c;" text="Seguro Social (7%): C$ 0.00" />
+    <Label fx:id="lblBono" style="-fx-text-fill: #2980b9;" text="Bono: C$ 0.00" />
+    <Label fx:id="lblTotal" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #16a085;" text="Total a pagar: C$ 0.00" />
+</VBox>
