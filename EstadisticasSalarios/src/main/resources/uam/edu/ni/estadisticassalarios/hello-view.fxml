@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- VBox principal con un color de fondo azul muy clarito -->
+<VBox spacing="15.0" style="-fx-background-color: #eaf2f8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uam.edu.ni.estadisticassalarios.HelloController">
+
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+
+    <!-- Título principal -->
+    <Label style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #154360;" text="Estadísticas de Empleados" />
+
+    <Label text="Ingrese el salario del empleado:" />
+    <TextField fx:id="txtSalario" style="-fx-background-radius: 5; -fx-padding: 5;" />
+
+    <!-- HBox es para poner los botones uno al lado del otro (horizontalmente) -->
+    <HBox spacing="10">
+        <!-- Botón azul para agregar a la lista -->
+        <Button onAction="#agregarSalario" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Agregar" />
+
+        <!-- Botón verde para calcular -->
+        <Button onAction="#calcularEstadisticas" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Calcular" />
+
+        <!-- Botón rojo para limpiar todo -->
+        <Button onAction="#reiniciar" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Reiniciar" />
+    </HBox>
+
+    <!-- Etiquetas donde mostraremos los resultados de los cálculos -->
+    <Label fx:id="lblConteo" style="-fx-text-fill: #7f8c8d; -fx-font-style: italic;" text="Empleados registrados: 0" />
+    <Label fx:id="lblMax" style="-fx-font-weight: bold; -fx-text-fill: #27ae60;" text="Salario más alto: C$ 0.00" />
+    <Label fx:id="lblMin" style="-fx-font-weight: bold; -fx-text-fill: #c0392b;" text="Salario más bajo: C$ 0.00" />
+    <Label fx:id="lblPromedio" style="-fx-font-weight: bold; -fx-text-fill: #2980b9;" text="Promedio: C$ 0.00" />
+    <Label fx:id="lblModa" style="-fx-font-weight: bold; -fx-text-fill: #8e44ad;" text="Moda: -" />
+
+</VBox>
